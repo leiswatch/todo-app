@@ -19,11 +19,21 @@ const Todo: React.FunctionComponent<TodoProps> = ({
   const handleDeleteTodo = () => deleteTodo(index);
 
   return (
-    <>
-      <input type='checkbox' name='completeTodo' id='completeTodo' onChange={handleOnChange} />
-      <p style={{ textDecoration: isCompleted ? 'line-through' : '' }}>{text}</p>
-      <button onClick={handleDeleteTodo}>X</button>
-    </>
+    <div className='todo'>
+      <input
+        type='checkbox'
+        name='completeTodo'
+        id='completeTodo'
+        onChange={handleOnChange}
+        className='todo__checkbox'
+      />
+      <p style={{ textDecoration: isCompleted ? 'line-through' : '' }} className='todo__text'>
+        {text}
+      </p>
+      <button onClick={handleDeleteTodo} className='todo__button'>
+        X
+      </button>
+    </div>
   );
 };
 

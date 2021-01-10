@@ -1,7 +1,8 @@
+import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import Todo from './components/Todo';
-import { nanoid } from 'nanoid';
 import TodoForm from './components/TodoForm';
+
 interface TodoState {
   id: string;
   text: string;
@@ -32,7 +33,7 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <div className='main'>
       {todos.map(({ id, text, isCompleted }, index) => (
         <Todo
           key={id}

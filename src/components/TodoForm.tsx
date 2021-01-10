@@ -19,15 +19,18 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({ addTodo }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='todo--add'>
+      <form onSubmit={handleSubmit} className="todo__form">
         <input
           type='text'
-          className='input'
-          placeholder="Add new todo..."
+          className='todo__input'
+          placeholder='Add new todo...'
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
+        <button type='submit' className='todo__add'>
+          Add
+        </button>
       </form>
     </div>
   );
